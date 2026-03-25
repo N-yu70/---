@@ -1,4 +1,4 @@
 # ---
 第一次作业
 # 团队logo
-<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/0cd4f052-7bee-4c32-a66f-7ed467508c5d" />
+![e78cbeee709dfa45a5d65cfd41857cfa](https://github.com/user-attachments/assets/18463173-1f29-4487-ba55-14cf7c16e370)
