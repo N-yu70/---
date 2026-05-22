@@ -1,0 +1,9 @@
+<view class="meal-tabs">
+  <view
+    wx:for="{{tabs}}"
+    wx:key="key"
+    class="tab {{active === item.key ? 'active' : ''}}"
+    data-key="{{item.key}}"
+    bindtap="onTap"
+  >{{item.label}}</view>
+</view>

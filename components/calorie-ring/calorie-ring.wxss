@@ -1,0 +1,34 @@
+.ring-wrap {
+  padding: 8rpx 0;
+}
+.ring-bg {
+  height: 20rpx;
+  background: #eee;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.ring-fill {
+  height: 100%;
+  border-radius: 10rpx;
+  transition: width 0.3s;
+}
+.ring-text {
+  margin-top: 20rpx;
+  text-align: center;
+}
+.intake {
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #333;
+}
+.unit {
+  font-size: 28rpx;
+  color: #888;
+}
+.percent {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  color: #aaa;
+  margin-top: 8rpx;
+}

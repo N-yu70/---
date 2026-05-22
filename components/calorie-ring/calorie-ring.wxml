@@ -1,0 +1,10 @@
+<view class="ring-wrap">
+  <view class="ring-bg">
+    <view class="ring-fill" style="width: {{percent > 100 ? 100 : percent}}%; background: {{statusColor}};"></view>
+  </view>
+  <view class="ring-text">
+    <text class="intake">{{intake}}</text>
+    <text class="unit"> / {{target}} 千卡</text>
+  </view>
+  <text class="percent">{{percent}}%</text>
+</view>
