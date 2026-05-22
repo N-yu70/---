@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calorie-ring": "/components/calorie-ring/calorie-ring"
+  },
+  "navigationBarTitleText": "食光智语"
+}

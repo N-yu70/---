@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="entry-bar">
+    <view class="entry-item active" bindtap="addRecord">
+      <text class="entry-icon">✏️</text>
+      <text>手动输入</text>
+    </view>
+    <view class="entry-item disabled" data-type="photo" bindtap="onStub">
+      <text class="entry-icon">📷</text>
+      <text>拍照识别</text>
+    </view>
+    <view class="entry-item disabled" data-type="voice" bindtap="onStub">
+      <text class="entry-icon">🎤</text>
+      <text>语音记录</text>
+    </view>
+  </view>
+
+  <meal-tabs active="{{mealType}}" bind:change="onMealChange" />
+
+  <view class="summary">
+    <text>{{date}}</text>
+    <text class="sum-cal">本餐 {{totalCal}} 千卡</text>
+  </view>
+
+  <view class="list" wx:if="{{records.length > 0}}">
+    <view class="card" wx:for="{{records}}" wx:key="id">
+      <view class="card-main" bindtap="editRecord" data-id="{{item.id}}">
+        <text class="food-name">{{item.foodName}}</text>
+        <text class="food-meta">{{item.amount}}{{item.unit}}</text>
+      </view>
+      <text class="card-cal">{{item.calories}}千卡</text>
+      <view class="card-actions">
+        <text class="action" bindtap="editRecord" data-id="{{item.id}}">编辑</text>
+        <text class="action del" bindtap="deleteRecord" data-id="{{item.id}}">删除</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:else>
+    <text>这一餐还没有记录</text>
+    <button class="btn-add" bindtap="addRecord">添加食物</button>
+  </view>
+
+  <view class="fab" bindtap="addRecord">+</view>
+</view>

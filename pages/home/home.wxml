@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="offline-tip" wx:if="{{offline}}">离线模式 · 后端未连接，数据仅存本机</view>
+  <view class="header-card">
+    <text class="date">{{date}} · 今日摄入</text>
+    <calorie-ring intake="{{intake}}" target="{{target}}" statusColor="{{status.color}}" />
+    <view class="status-bar" style="border-color: {{status.color}};">
+      <text class="status-hint" style="color: {{status.color}};">{{status.hint}}</text>
+      <text class="status-text">{{status.text}}</text>
+    </view>
+  </view>
+
+  <view class="advice-card">
+    <view class="card-title">饮食建议</view>
+    <text class="advice-text">{{advice}}</text>
+    <text class="advice-tag">P1 云端建议 · 基于今日摄入生成</text>
+  </view>
+
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">今日各餐</text>
+      <text class="link" bindtap="addRecord">+ 记一笔</text>
+    </view>
+    <block wx:for="{{mealList}}" wx:key="key">
+      <view class="meal-block" wx:if="{{item.count > 0}}">
+        <view class="meal-head">
+          <text class="meal-name">{{item.label}}</text>
+          <text class="meal-cal">{{item.calories}} 千卡</text>
+        </view>
+        <view class="food-line" wx:for="{{item.items}}" wx:for-item="food" wx:key="id">
+          <text>{{food.foodName}} {{food.amount}}{{food.unit}}</text>
+          <text class="food-cal">{{food.calories}}千卡</text>
+        </view>
+        <text class="more" wx:if="{{item.count > 3}}">还有 {{item.count - 3}} 项…</text>
+      </view>
+    </block>
+    <view class="empty" wx:if="{{intake === 0}}">
+      <text class="empty-title">今天还没有记录</text>
+      <text class="empty-desc">手动输入食物和份量，自动计算热量</text>
+      <button class="btn-primary" bindtap="addRecord">开始记录</button>
+    </view>
+  </view>
+</view>

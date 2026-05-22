@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "meal-tabs": "/components/meal-tabs/meal-tabs"
+  },
+  "navigationBarTitleText": "添加记录"
+}

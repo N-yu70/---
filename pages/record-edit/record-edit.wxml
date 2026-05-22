@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="form-card">
+    <text class="label">餐次</text>
+    <meal-tabs active="{{mealType}}" bind:change="onMealChange" />
+
+    <text class="label">食物名称</text>
+    <input
+      class="input"
+      placeholder="如：米饭、鸡胸肉、苹果"
+      value="{{foodName}}"
+      bindinput="onFoodInput"
+    />
+
+    <text class="label">食用量</text>
+    <view class="row">
+      <input
+        class="input flex"
+        type="digit"
+        placeholder="数量"
+        value="{{amount}}"
+        bindinput="onAmountInput"
+      />
+      <picker mode="selector" range="{{units}}" value="{{unitIndex}}" bindchange="onUnitChange">
+        <view class="picker">{{unit}} ▼</view>
+      </picker>
+    </view>
+
+    <view class="quick-row">
+      <text
+        class="quick-btn"
+        wx:for="{{quickAmounts}}"
+        wx:key="*this"
+        data-val="{{item}}"
+        bindtap="setQuickAmount"
+      >{{item}}</text>
+    </view>
+
+    <view class="preview">
+      <text>预估热量</text>
+      <text class="preview-val">{{previewCal}} 千卡</text>
+    </view>
+    <text class="tip">热量由服务端食物库估算（离线时回退本地计算）</text>
+  </view>
+
+  <button class="btn-save" bindtap="save" loading="{{saving}}" disabled="{{saving}}">{{isEdit ? '保存修改' : '保存记录'}}</button>
+</view>

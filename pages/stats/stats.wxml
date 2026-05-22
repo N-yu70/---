@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="tabs">
+    <text class="tab {{viewType === 'day' ? 'active' : ''}}" data-type="day" bindtap="switchView">每日</text>
+    <text class="tab {{viewType === 'week' ? 'active' : ''}}" data-type="week" bindtap="switchView">每周</text>
+  </view>
+
+  <view class="summary-card">
+    <text class="sum-label">{{viewType === 'day' ? '今日总热量' : '今日（周内）'}}</text>
+    <text class="sum-val">{{dayTotal}} <text class="unit">千卡</text></text>
+    <text class="sum-target">目标 {{target}} 千卡</text>
+  </view>
+
+  <view class="chart-card">
+    <view class="bar-chart" wx:if="{{chartBars.length > 0}}">
+      <view class="bar-col" wx:for="{{chartBars}}" wx:key="key">
+        <text class="bar-value">{{item.calories}}</text>
+        <view class="bar-track">
+          <view class="bar-inner" style="height: {{item.barPercent}}%; background-color: {{item.color}};"></view>
+        </view>
+        <text class="bar-label">{{item.label}}</text>
+      </view>
+    </view>
+    <view class="chart-empty" wx:else>
+      <text>暂无数据，先去记录一餐吧</text>
+    </view>
+  </view>
+
+  <view class="detail-list" wx:if="{{viewType === 'day'}}">
+    <view class="detail-row" wx:for="{{dayMeals}}" wx:key="key">
+      <view class="dot" style="background: {{item.color}};"></view>
+      <text class="detail-label">{{item.label}}</text>
+      <view class="bar-bg">
+        <view class="bar-fill" style="width: {{item.percent}}%; background: {{item.color}};"></view>
+      </view>
+      <text class="detail-cal">{{item.calories}}</text>
+    </view>
+  </view>
+
+  <view class="detail-list" wx:else>
+    <view class="detail-row" wx:for="{{weekData}}" wx:key="date">
+      <text class="detail-label w-label">周{{item.label}}</text>
+      <view class="bar-bg flex1">
+        <view class="bar-fill" style="width: {{item.percent}}%; background: {{item.color}};"></view>
+      </view>
+      <text class="detail-cal">{{item.calories}}</text>
+    </view>
+  </view>
+</view>

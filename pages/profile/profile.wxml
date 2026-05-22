@@ -1,0 +1,68 @@
+<view class="page">
+  <view class="hero">
+    <text class="app-name">食光智语</text>
+    <text class="app-desc">学生饮食记录 · P1 云端同步</text>
+    <text class="openid" wx:if="{{openId}}">ID: {{openId}}</text>
+    <text class="dev-hint" wx:if="{{devHint}}">{{devHint}}</text>
+  </view>
+
+  <view class="form-card">
+    <text class="section-title">身体数据</text>
+    <view class="field">
+      <text class="field-label">身高 (cm)</text>
+      <input class="field-input" type="digit" data-field="height" value="{{profile.height}}" bindinput="onInput" placeholder="170" />
+    </view>
+    <view class="field">
+      <text class="field-label">体重 (kg)</text>
+      <input class="field-input" type="digit" data-field="weight" value="{{profile.weight}}" bindinput="onInput" placeholder="60" />
+    </view>
+    <view class="field">
+      <text class="field-label">年龄</text>
+      <input class="field-input" type="number" data-field="age" value="{{profile.age}}" bindinput="onInput" />
+    </view>
+    <view class="field">
+      <text class="field-label">性别</text>
+      <picker mode="selector" range="{{genders}}" range-key="label" value="{{genderIndex}}" bindchange="onGenderChange">
+        <view class="picker-val">{{genders[genderIndex].label}} ▼</view>
+      </picker>
+    </view>
+    <view class="field">
+      <text class="field-label">活动量</text>
+      <picker mode="selector" range="{{activities}}" range-key="label" value="{{activityIndex}}" bindchange="onActivityChange">
+        <view class="picker-val">{{activities[activityIndex].label}} ▼</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="form-card">
+    <text class="section-title">饮食偏好</text>
+    <textarea
+      class="textarea"
+      placeholder="如：低碳、不吃辣、偏爱素食…"
+      data-field="preferences"
+      value="{{profile.preferences}}"
+      bindinput="onInput"
+      maxlength="200"
+    />
+  </view>
+
+  <view class="form-card">
+    <text class="section-title">每日热量目标</text>
+    <view class="target-row">
+      <input
+        class="target-input"
+        type="number"
+        data-field="dailyCalorieTarget"
+        value="{{profile.dailyCalorieTarget}}"
+        bindinput="onInput"
+      />
+      <text class="target-unit">千卡</text>
+    </view>
+    <button class="btn-outline" bindtap="recommendTarget">一键推荐目标</button>
+  </view>
+
+  <button class="btn-save" bindtap="save">保存设置</button>
+  <button class="btn-danger" bindtap="clearData">清空所有记录</button>
+
+  <text class="footer">拍照识别、语音将在 P2 开放 · 数据已云端存储</text>
+</view>
