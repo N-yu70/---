@@ -1,0 +1,67 @@
+{
+  "users": {
+    "dev_MGYzcDBERmExMFRv": {
+      "openId": "dev_MGYzcDBERmExMFRv",
+      "profile": {
+        "height": "",
+        "weight": "",
+        "age": "20",
+        "gender": "male",
+        "activityLevel": "light",
+        "preferences": "",
+        "dailyCalorieTarget": 1800
+      },
+      "createdAt": 1779452871338
+    },
+    "dev_MGQzTUhmMHczWDEx": {
+      "openId": "dev_MGQzTUhmMHczWDEx",
+      "profile": {
+        "height": "",
+        "weight": "",
+        "age": "20",
+        "gender": "male",
+        "activityLevel": "light",
+        "preferences": "",
+        "dailyCalorieTarget": 1800
+      },
+      "createdAt": 1779452972172
+    },
+    "dev_MGYzcnBzR2ExWkdk": {
+      "openId": "dev_MGYzcnBzR2ExWkdk",
+      "profile": {
+        "height": "",
+        "weight": "",
+        "age": "20",
+        "gender": "male",
+        "activityLevel": "light",
+        "preferences": "",
+        "dailyCalorieTarget": 1800
+      },
+      "createdAt": 1779453124263
+    }
+  },
+  "records": [],
+  "advices": [
+    {
+      "id": "a60d61a8-d03e-4213-a388-8b64dba5b526",
+      "userId": "dev_MGYzcnBzR2ExWkdk",
+      "content": "今日摄入偏少。可补充优质蛋白和全谷物。",
+      "adviceDate": "2026-05-22",
+      "createdAt": 1779453124312
+    },
+    {
+      "id": "1b277a79-7e8d-4523-aca6-286d9d3a8c5f",
+      "userId": "dev_MGQzTUhmMHczWDEx",
+      "content": "今日摄入偏少。可补充优质蛋白和全谷物。",
+      "adviceDate": "2026-05-22",
+      "createdAt": 1779452972221
+    },
+    {
+      "id": "73b57414-9954-4748-8c18-ffb626dba81d",
+      "userId": "dev_MGYzcDBERmExMFRv",
+      "content": "今日摄入偏少。可补充优质蛋白和全谷物。",
+      "adviceDate": "2026-05-22",
+      "createdAt": 1779452871395
+    }
+  ]
+}
